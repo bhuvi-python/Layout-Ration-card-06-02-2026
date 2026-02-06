@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Upload Documents</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+body{background:#E8EDF2}
+
+/* ---------- Progress Bar ---------- */
+.progress{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+}
+.progress::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    height:7px;
+    background:#4D7399;
+    transform:translateY(-50%);
+    z-index:0;
+}
+.progress .step{
+    width:80px;height:80px;
+    border-radius:50%;
+    background:#373C7D;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    z-index:1;
+}
+.progress .line-white{
+    position:absolute;
+    right:0;
+    top:50%;
+    height:7px;
+    width:25%;
+    background:#4D7399;
+    transform:translateY(-50%);
+    z-index:0;
+}
+
+/* ---------- Headings ---------- */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto 80px;
+}
+h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+.sub{
+    font-size:18px;
+    margin-bottom:25px;
+}
+h3{
+    margin:20px 0 10px;
+}
+
+/* ---------- Upload Card ---------- */
+.doc-card{
+    background:#F7FAFC;
+    border:1px solid rgba(0,0,0,0.25);
+    box-shadow:0 4px 4px rgba(0,0,0,0.25);
+    border-radius:8px;
+    padding:12px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+}
+.doc-left{
+    display:flex;
+    gap:16px;
+    align-items:center;
+}
+.icon{
+    width:48px;height:48px;
+    background:#E8EDF2;
+    border-radius:8px;
+}
+.doc-text b{display:block;margin-bottom:4px}
+.doc-text span{font-size:14px;color:#4D7399}
+.doc-icon{
+    width:48px;
+    height:48px;
+    background:#E8EDF2;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.doc-icon img{
+    width:24px;
+    height:24px;
+}
+
+/* ---------- Buttons ---------- */
+.upload-btn{
+    padding:6px 18px;
+    border-radius:8px;
+    border:none;
+    background:#E8EDF2;
+    cursor:pointer;
+    box-shadow:0 4px 4px rgba(0,0,0,0.25);
+}
+.upload-btn.active{
+    background:#373C7D;
+    color:#fff;
+}
+.actions{
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+}
+.prev{
+    padding:10px 24px;
+    background:#E8EDF2;
+    border-radius:8px;
+    text-decoration:none;
+    color:#000;
+    box-shadow:0 4px 4px rgba(0,0,0,0.25);
+}
+.submit{
+    padding:10px 28px;
+    background:#373C7D;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+    .doc-card{flex-direction:column;align-items:flex-start;gap:10px}
+    .actions{flex-direction:column;gap:15px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Progress -->
+<div class="progress">
+    <div class="step">1</div>
+    <div class="step">2</div>
+    <div class="step">3</div>
+    <div class="step">4</div>
+    <div class="line-white"></div>
+</div>
+
+<div class="container">
+    <h1>Upload Documents</h1>
+    <div class="sub">Please upload the following documents to complete your application. Ensure all documents are clear and legible.</div>
+
+    <h3>Required Documents</h3>
+
+    <!-- Document Rows -->
+    <div class="doc-card">
+        <div class="doc-left">
+            <div class="doc-icon">
+    <img src="doc.png" alt="doc">
+</div>
+            <div class="doc-text">
+                <b>Aadhaar Card</b>
+                <span>Upload a clear copy of your Aadhaar card.</span>
+            </div>
+        </div>
+        <button class="upload-btn" onclick="toggle(this)">Upload</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-left">
+            <div class="doc-icon">
+    <img src="doc.png" alt="doc">
+</div>
+            <div class="doc-text">
+                <b>Address Proof</b>
+                <span>Upload any document as proof of your current address.</span>
+            </div>
+        </div>
+        <button class="upload-btn" onclick="toggle(this)">Upload</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-left">
+            <div class="doc-icon">
+    <img src="doc.png" alt="doc">
+</div>
+            <div class="doc-text">
+                <b>Income Certificate</b>
+                <span>Upload your income certificate issued by the relevant authority.</span>
+            </div>
+        </div>
+        <button class="upload-btn" onclick="toggle(this)">Upload</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-left">
+            <div class="doc-icon">
+    <img src="doc.png" alt="doc">
+</div>
+            <div class="doc-text">
+                <b>Passport Photo</b>
+                <span>Upload a recent passport-sized photograph.</span>
+            </div>
+        </div>
+        <button class="upload-btn" onclick="toggle(this)">Upload</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-left">
+            <div class="doc-icon">
+    <img src="doc.png" alt="doc">
+</div>
+            <div class="doc-text">
+                <b>Marriage Certificate</b>
+                <span>Upload your marriage certificate.</span>
+            </div>
+        </div>
+        <button class="upload-btn" onclick="toggle(this)">Upload</button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+        <a href="1.application3.html" class="prev">Previous</a>
+        <a href="1.review.html" class="submit">Submit Application</a>
+    </div>
+</div>
+
+<script>
+function toggle(btn){
+    btn.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

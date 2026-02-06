@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tracking Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #EEF3F8;
+      color: #0D141C;
+    }
+
+    /* ================= HEADER (FROM PREVIOUS CODE) ================= */
+    header {
+      height: 64px;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* ================= MAIN WRAPPER ================= */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+      text-align: center;
+    }
+
+    /* ================= IMAGE ================= */
+    .image-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      width: 420px;
+      background: #F7FAFC;
+      border-radius: 6px;
+    }
+
+    /* ================= TITLE ================= */
+    .title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* ================= DESCRIPTION ================= */
+    .description {
+      font-size: 20px;
+      line-height: 32px;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    /* ================= APPLICATION NUMBER ================= */
+    .app-number-wrapper {
+      max-width: 800px;
+      margin: 0 auto 32px;
+      text-align: left;
+    }
+
+    .app-number-wrapper label {
+      font-size: 20px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .app-number-box {
+      height: 47px;
+      background: #F7FAFC;
+      border: 1px solid #CFDBE8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    /* ================= BUTTONS ================= */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      height: 40px;
+      padding: 0 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #373C7D;
+      color: #F7FAFC;
+      box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    }
+
+    .btn-secondary {
+      background: #E8EDF2;
+      color: #0D141C;
+      box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    }
+
+    /* ================= FOOTER (FROM PREVIOUS CODE) ================= */
+    footer {
+      height: 60px;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      margin-top: 80px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 26px;
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      .app-number-wrapper {
+        text-align: center;
+      }
+
+      .app-number-box {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-wrapper">
+
+    <!-- IMAGE -->
+    <div class="image-box">
+      <img src="tracking.png" alt="Tracking Illustration">
+    </div>
+
+    <!-- TITLE -->
+    <div class="title">Tracking Applications</div>
+
+    <!-- DESCRIPTION -->
+    <div class="description">
+      Your application for a new ration card has been successfully submitted.
+      Please keep the following application number for tracking purposes.
+    </div>
+
+    <!-- APPLICATION NUMBER -->
+    <div class="app-number-wrapper">
+      <label>Application Number</label>
+      <div class="app-number-box">
+        RC2025XXXX
+      </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="action-buttons">
+      <a href="1.track.html" class="btn btn-primary">
+        Track Application Status
+      </a>
+
+      <a href="1.dashboard.html" class="btn btn-secondary">
+        Go to Dashboard
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer></footer>
+
+</body>
+</html>

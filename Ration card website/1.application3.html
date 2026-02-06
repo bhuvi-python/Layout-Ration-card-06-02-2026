@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Application Step 3 - Family Details</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#E8EDF2;}
+
+/* ===== HEADER ===== */
+header{
+position:fixed;top:0;left:0;width:100%;height:65px;
+background:#F7FAFC;border-bottom:1px solid #E6E8EB;
+box-shadow:0 4px 4px rgba(0,0,0,0.15);
+display:flex;justify-content:space-between;align-items:center;
+padding:0 40px;z-index:1000;
+}
+.logo img{width:150px;}
+nav{display:flex;gap:36px;align-items:center;}
+nav a{text-decoration:none;color:#0D141C;font-size:18px;font-weight:500;}
+.login-btn{background:#373C7D;color:#fff;padding:8px 18px;border-radius:8px;font-weight:700;}
+
+/* ===== CONTAINER ===== */
+.container{max-width:820px;margin:140px auto 80px;padding:0 20px;}
+
+/* ===== PROGRESS ===== */
+.progress{display:flex;align-items:center;margin-bottom:50px;}
+.circle{
+width:46px;height:46px;border-radius:50%;
+background:#373C7D;color:#fff;
+display:flex;align-items:center;justify-content:center;
+font-weight:700;
+}
+.line{flex:1;height:6px;background:#4D7399;}
+.line.light{background:#fff;}
+
+/* ===== TITLES ===== */
+h2{font-size:28px;margin-bottom:8px;color:#0D141C;}
+.subtext{color:#4D7399;margin-bottom:30px;font-size:16px;}
+.sub-title{
+font-size:20px;
+font-weight:700;
+margin-bottom:18px;
+color:#0D141C;
+}
+
+/* ===== INPUT ===== */
+.field{margin-bottom:18px;}
+input{
+width:100%;padding:14px;border-radius:8px;
+border:1px solid #CFDBE8;background:#F7FAFC;
+font-size:16px;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown{position:relative;}
+.select-box{
+width:100%;padding:14px;border-radius:8px;
+border:1px solid #CFDBE8;background:#F7FAFC;
+cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+}
+.arrow{font-size:18px;color:#4D7399;}
+.options{
+display:none;flex-direction:column;margin-top:6px;
+}
+.option{
+padding:14px;border-radius:8px;
+border:1px solid #CFDBE8;background:#F7FAFC;
+margin-bottom:6px;cursor:pointer;
+}
+.option:hover{background:#e3eaf3;}
+
+/* ===== TABLE ===== */
+.table{
+margin-top:30px;
+background:#F7FAFC;
+border:1px solid #CFDBE8;
+border-radius:8px;
+overflow:hidden;
+}
+.row{
+display:flex;
+padding:14px 18px;
+border-top:1px solid #E6E8EB;
+font-size:14px;
+color:#4D7399;
+}
+.row.header{
+background:#F7FAFC;
+font-weight:600;
+color:#0D141C;
+border-top:none;
+}
+.col{flex:1;}
+
+/* ===== BUTTONS ===== */
+.btn-row{
+display:flex;justify-content:space-between;margin-top:40px;
+}
+.prev-btn{
+background:#E8EDF2;
+border:none;
+border-radius:8px;
+padding:10px 24px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 4px 4px rgba(0,0,0,0.25);
+}
+.next{
+background:#373C7D;color:white;border:none;
+padding:10px 28px;border-radius:8px;
+cursor:pointer;font-weight:700;
+}
+
+/* ===== FOOTER ===== */
+footer{
+background:#373C7D;color:white;padding:40px 0;margin-top:80px;
+}
+.footer-inner{max-width:1200px;margin:auto;text-align:center;}
+.footer-links{display:flex;justify-content:center;gap:120px;margin-bottom:20px;font-size:12px;}
+footer p{font-size:12px;}
+
+@media(max-width:600px){
+.line{margin:0 6px;}
+.footer-links{gap:40px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="1.home.html" class="logo"><img src="logo.png"></a>
+<nav>
+<a href="1.home.html">Home</a>
+<a href="1.about us.html">About</a>
+<a href="1.contact.html">Contact</a>
+<a href="1.login.html" class="login-btn">Login</a>
+</nav>
+</header>
+
+<div class="container">
+
+<!-- Progress -->
+<div class="progress">
+<div class="circle">1</div>
+<div class="line"></div>
+<div class="circle">2</div>
+<div class="line"></div>
+<div class="circle">3</div>
+<div class="line light"></div>
+<div class="circle">4</div>
+</div>
+
+<h2>Family Details</h2>
+<div class="subtext">Please provide details of all family members to be included in the ration card.</div>
+
+<h3 class="sub-title">Add Family Member</h3>
+
+<!-- Relationship -->
+<div class="field dropdown">
+<div class="select-box" onclick="toggleDropdown('relation')">
+<span id="relationText">Select Relationship</span>
+<span class="arrow">⌄⌃</span>
+</div>
+<div class="options" id="relation">
+<div class="option" onclick="selectOption('relation','Wife')">Wife</div>
+<div class="option" onclick="selectOption('relation','Husband')">Husband</div>
+<div class="option" onclick="selectOption('relation','Son')">Son</div>
+<div class="option" onclick="selectOption('relation','Daughter')">Daughter</div>
+</div>
+</div>
+
+<!-- Age -->
+<div class="field">
+<input type="text" placeholder="Age">
+</div>
+
+<!-- Aadhaar -->
+<div class="field">
+<input type="text" placeholder="Aadhaar Number">
+</div>
+
+<div style="text-align:right;margin-top:10px;">
+<button class="next" onclick="location.href='1.application1.html'">Add Member</button>
+</div>
+
+<!-- Table -->
+<div class="table">
+<div class="row header">
+<div class="col">Relationship</div>
+<div class="col">Age</div>
+<div class="col">Aadhaar Number</div>
+</div>
+<div class="row">
+<div class="col">Spouse</div>
+<div class="col">32</div>
+<div class="col">XXXX-XXXX-1234</div>
+</div>
+<div class="row">
+<div class="col">Child</div>
+<div class="col">10</div>
+<div class="col">XXXX-XXXX-5678</div>
+</div>
+<div class="row">
+<div class="col">Child</div>
+<div class="col">5</div>
+<div class="col">XXXX-XXXX-9012</div>
+</div>
+</div>
+
+<!-- Buttons -->
+<div class="btn-row">
+<button class="prev-btn" onclick="location.href='1.application2.html'">Previous</button>
+<button class="next" onclick="location.href='1.upload.html'">Next</button>
+</div>
+
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-links">
+<span>Terms of Service</span>
+<span>Privacy Policy</span>
+<span>Accessibility</span>
+</div>
+<p>© 2024 Ration Card Services. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+function toggleDropdown(id){
+document.querySelectorAll('.options').forEach(o=>{
+if(o.id!==id) o.style.display='none';
+});
+let el=document.getElementById(id);
+el.style.display = el.style.display==='flex' ? 'none':'flex';
+}
+
+function selectOption(id,value){
+document.getElementById(id+'Text').innerText=value;
+document.getElementById(id).style.display='none';
+}
+
+window.onclick=function(e){
+if(!e.target.closest('.dropdown')){
+document.querySelectorAll('.options').forEach(o=>o.style.display='none');
+}
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Application - Step 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#E8EDF2;}
+
+/* ===== HEADER ===== */
+header{
+    position:fixed;top:0;left:0;width:100%;height:65px;
+    background:#F7FAFC;border-bottom:1px solid #E6E8EB;
+    box-shadow:0 4px 4px rgba(0,0,0,0.15);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 40px;z-index:1000;
+}
+.logo img{width:150px;}
+nav{display:flex;gap:36px;align-items:center;}
+nav a{text-decoration:none;color:#0D141C;font-size:18px;font-weight:500;}
+.login-btn{background:#373C7D;color:#fff;padding:8px 18px;border-radius:8px;font-weight:700;}
+
+/* ===== CONTAINER ===== */
+.container{max-width:900px;margin:120px auto 0;padding:0 20px;}
+
+/* ===== PROGRESS BAR ===== */
+.progress{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:60px;position:relative;
+}
+.progress::before{
+    content:"";position:absolute;top:40px;left:60px;right:60px;
+    height:6px;background:#F7FAFC;z-index:0;
+}
+.step{
+    width:80px;height:80px;border-radius:50%;
+    background:#373C7D;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:28px;z-index:1;
+}
+
+/* ===== TITLE ===== */
+.title{font-size:32px;font-weight:700;margin-bottom:30px;}
+
+/* ===== FORM ===== */
+.form-group{margin-bottom:24px;}
+label{display:block;font-size:20px;font-weight:500;margin-bottom:8px;}
+input{
+    width:100%;padding:15px;border-radius:8px;
+    border:1px solid #CFDBE8;background:#F7FAFC;
+    font-size:16px;
+}
+
+/* ===== GENDER DROPDOWN FIX ===== */
+.gender-select{
+    width:100%;
+    background:#F7FAFC;
+    border:1px solid #CFDBE8;
+    border-radius:8px;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:left;
+    cursor:pointer;
+}
+
+.arrows{
+    font-size:12px;
+    color:#4D7399;
+    line-height:10px;
+    text-align:right;
+}
+
+.gender-options{
+    display:none;
+    flex-direction:column;
+    margin-top:12px;
+    gap:12px;
+    align-items: left;
+}
+
+/* THIS PART FIXES THE LEFT ALIGNMENT */
+.gender-option{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;  /* important */
+    gap:12px;
+    background:#F7FAFC;
+    border:1px solid #CFDBE8;
+    border-radius:8px;
+    padding:15px;
+    text-align:left;            /* important */
+    padding-right: 800px;
+}
+
+.gender-option input{
+    margin:0;
+}
+
+/* ===== NEXT BUTTON ===== */
+.next-btn{
+    background:#373C7D;
+    color:#fff;
+    padding:12px 28px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    float:right;
+    margin-top: 90px;
+   
+   }
+
+/* ===== FOOTER ===== */
+footer{
+    background:#373C7D;color:white;padding:40px 0;margin-top:260px;
+}
+.footer-inner{max-width:1200px;margin:auto;padding:0 40px;}
+.footer-links{
+    display:flex;justify-content:center;gap:120px;
+    margin-bottom:20px;font-size:12px;
+}
+footer p{text-align:center;font-size:12px;}
+
+@media(max-width:768px){
+    .next-btn{float:none;width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="1.home.html" class="logo">
+        <img src="logo.png" alt="logo">
+    </a>
+    <nav>
+        <a href="1.home.html">Home</a>
+        <a href="1.about us.html">About</a>
+        <a href="1.contact.html">Contact</a>
+        <a href="1.login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Progress -->
+    <div class="progress">
+        <div class="step">1</div>
+        <div class="step">2</div>
+        <div class="step">3</div>
+        <div class="step">4</div>
+    </div>
+
+    <div class="title">Applicant Details</div>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" value="Priya Sharma">
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="gender-select" onclick="toggleGender()">
+            <span id="selectedGender">Select Gender</span>
+            <div class="arrows">▲<br>▼</div>
+        </div>
+
+        <div class="gender-options" id="genderOptions">
+            <label class="gender-option">
+                <input type="radio" name="gender" onclick="selectGender('Male')">
+                Male
+            </label>
+            <label class="gender-option">
+                <input type="radio" name="gender" onclick="selectGender('Female')">
+                Female
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="text" placeholder="DD/MM/YYYY">
+    </div>
+
+    <div class="form-group">
+        <label>Aadhaar Number</label>
+        <input type="text" placeholder="Enter your 12-digit Aadhaar number">
+    </div>
+
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="text" placeholder="Enter your 10-digit mobile number">
+    </div>
+
+    <button class="next-btn" onclick="window.location.href='1.application2.html'">
+        Next
+    </button>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+      <div class="footer-links">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+          <span>Accessibility</span>
+      </div>
+      <p>© 2024 Ration Card Services. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleGender(){
+    const box = document.getElementById("genderOptions");
+    box.style.display = box.style.display === "flex" ? "none" : "flex";
+}
+function selectGender(g){
+    document.getElementById("selectedGender").innerText = g;
+    document.getElementById("genderOptions").style.display = "none";
+}
+</script>
+
+</body>
+</html>

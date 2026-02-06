@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Download Ration Card</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Public Sans',sans-serif;
+}
+
+body{
+    background:#E8EDF2;
+}
+
+/* ================= HEADER ================= */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+    background:#F7FAFC;
+    border-bottom:1px solid #E6E8EB;
+    box-shadow:0 4px 4px rgba(0,0,0,0.15);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    z-index:1000;
+}
+
+.logo img{ width:150px; }
+
+nav{
+    display:flex;
+    gap:36px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0D141C;
+    font-size:18px;
+    font-weight:500;
+}
+
+.login-btn{
+    background:#373C7D;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:8px;
+    font-weight:700;
+}
+
+/* ================= MAIN ================= */
+.container{
+    max-width:1200px;
+    margin:120px auto 60px;
+    padding:0 40px;
+}
+
+.title{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.card-section{
+    display:flex;
+    gap:60px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.card-img{
+    width:500px;
+    border-radius:8px;
+}
+
+.status-box{
+    flex:1;
+    min-width:280px;
+}
+
+.status-box h4{
+    font-size:14px;
+    color:#4D7399;
+    margin-bottom:6px;
+}
+
+.status-box p{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    background:#E8EDF2;
+    padding:8px 18px;
+    border-radius:8px;
+    box-shadow:0 4px 4px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.btn-row{
+    text-align:center;
+    margin:60px 0 20px;
+}
+
+.btn{
+    padding:12px 30px;
+    border-radius:8px;
+    border:none;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 4px 4px rgba(0,0,0,0.25);
+    margin:0 10px;
+}
+
+.btn-primary{
+    background:#373C7D;
+    color:#fff;
+}
+
+.btn-light{
+    background:#E8EDF2;
+}
+
+/* Success message */
+.success{
+    display:none;
+    width:60%;
+    margin:20px auto;
+    background:#000;
+    color:#fff;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#373C7D;
+    color:white;
+    padding:40px 0;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:0 40px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:120px;
+    margin-bottom:20px;
+    font-size:12px;
+}
+
+footer p{
+    text-align:center;
+    font-size:12px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .card-section{
+        flex-direction:column;
+        text-align:center;
+    }
+    .card-img{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="1.home.html" class="logo">
+        <img src="logo.png" alt="logo">
+    </a>
+    <nav>
+        <a href="1.home.html">Home</a>
+        <a href="1.about us.html">About</a>
+        <a href="1.contact.html">Contact</a>
+        <a href="1.login.html" class="login-btn">Login</a>
+
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="title">Download Ration Card</div>
+
+    <div class="card-section">
+        <img src="card.png" class="card-img" alt="ration card">
+
+        <div class="status-box">
+            <h4>Application Status</h4>
+            <p><b>Application Number:</b> RC2024001234</p>
+            <p><b>Applicant Name:</b> Priya Sharma</p>
+            <p><b>Application Date:</b> 2024-07-20</p>
+            <div class="badge">Current Status: Approved</div>
+        </div>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn btn-primary" id="downloadBtn">Download PDF</button>
+        <button class="btn btn-light" onclick="window.print()">Print</button>
+    </div>
+
+    <div class="success" id="successMsg">
+        Download Successfully!!!!
+    </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+      <div class="footer-links">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+          <span>Accessibility</span>
+      </div>
+      <p>© 2024 Ration Card Services. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const btn = document.getElementById('downloadBtn');
+const msg = document.getElementById('successMsg');
+
+btn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    msg.style.display = 'block';
+});
+
+document.addEventListener('click', ()=>{
+    msg.style.display = 'none';
+});
+</script>
+
+</body>
+</html>

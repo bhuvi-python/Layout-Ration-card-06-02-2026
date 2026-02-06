@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ration Card Services Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#E8EDF2;
+}
+
+/* ================= HEADER ================= */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:65px;
+    background:#F7FAFC;
+    border-bottom:1px solid #E6E8EB;
+    box-shadow:0 4px 4px rgba(0,0,0,0.15);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:22px;
+    font-weight:600;
+    color:#373C7D;
+}
+
+.logo img{
+    width:150px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:36px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0D141C;
+    font-size:18px;
+    font-weight:500;
+}
+
+.login-btn{
+    background:#373C7D;
+    color:white;
+    padding:8px 18px;
+    border-radius:8px;
+    font-weight:700;
+}
+
+/* ================= HERO ================= */
+.hero{
+    margin-top:65px;
+    height:560px;
+    border-radius:8px;
+    margin:90px 40px 40px 40px;
+    background:linear-gradient(90deg,rgba(0,0,0,0.1),rgba(0,0,0,0.5)), url('hero.jpg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.hero p{
+    font-size:20px;
+    margin:12px 0 28px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.btn-primary{
+    background:#373C7D;
+    color:white;
+    padding:12px 28px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    margin-top: 50px;
+}
+
+.btn-secondary{
+    background:#E8EDF2;
+    color:#0D141C;
+    padding:12px 28px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:700;
+    text-decoration:none;
+    margin-top: 50px;
+}
+
+/* ================= CONTENT ================= */
+.section{
+    margin:40px;
+    
+}
+
+.section h2{
+    font-size:32px;
+    margin-bottom:20px;
+    color:#0D141C;
+}
+
+.section p{
+    font-size:20px;
+    line-height:1.8;
+    color:#0D141C;
+}
+
+.center-btn{
+    text-align:center;
+    margin:40px 0;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#373C7D;
+    color:white;
+    padding:40px 0;
+}
+
+.footer-inner{
+    max-width:1200px;      /* same feel as page content */
+    margin:0 auto;         /* center it */
+    padding:0 40px;        /* left/right margin */
+}
+.footer-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;      /* adjust spacing here */
+    margin-bottom:20px;
+    color:white;
+    font-size:12px;
+}
+
+.footer-links span{
+    cursor:default;
+}
+
+footer p{
+    text-align:center;
+    font-size:12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .hero h1{
+        font-size:34px;
+    }
+    nav{
+        gap:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="logo">
+    </div>
+
+    <nav>
+    <a href="1.home.html">Home</a>
+    <a href="1.about us.html">About</a>
+    <a href="1.contact.html">Contact</a>
+    <a href="1.login.html" class="login-btn">Login</a>
+</nav>
+
+</header>
+
+<section class="hero">
+    <h1>Ration Card Services Portal</h1>
+    <p>Apply, track, and manage your ration card online.</p>
+    <div class="hero-buttons">
+        <a href="1.registration.html" class="btn-primary">Apply for New Ration Card</a>
+        <a href="#" class="btn-secondary">Check Application Status</a>
+    </div>
+</section>
+
+<div class="section">
+    <h2>Eligibility and Required Documents</h2>
+    <p>
+        To be eligible for a ration card, applicants must be residents of the state and not possess any existing ration card.
+        Required documents typically include proof of residence (e.g., Aadhaar card, voter ID), proof of identity (e.g., PAN card,
+        passport), and a recent passport-sized photograph. Specific requirements may vary, so please refer to the detailed
+        guidelines for your region.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Contact Us</h2>
+    <p>
+        For any queries or assistance, please contact our helpline at 1800-123-4567
+        or email us at support@rationcard.gov.in.
+    </p>
+</div>
+
+<div class="center-btn">
+    <a href="1.registration.html" class="btn-primary">Apply for New Ration Card</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+      <div class="footer-links">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+          <span>Accessibility</span>
+      </div>
+      <p>© 2024 Ration Card Services. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

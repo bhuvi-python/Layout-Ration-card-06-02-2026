@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  background:#E8EDF2;
+  color:#0D141C;
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:65px;
+  background:#F7FAFC;
+  border-bottom:1px solid #E6E8EB;
+  box-shadow:0 4px 4px rgba(0,0,0,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:1000;
+}
+
+.logo img{
+  width:150px;
+}
+
+nav{
+  display:flex;
+  gap:36px;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:#0D141C;
+  font-size:18px;
+  font-weight:500;
+}
+
+.login-btn{
+  background:#373C7D;
+  color:white;
+  padding:8px 18px;
+  border-radius:8px;
+  font-weight:700;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+  max-width:1200px;
+  margin:120px auto 80px;
+  padding:0 20px;
+}
+
+/* ================= TITLE ================= */
+.page-title{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:32px;
+  
+}
+
+/* ================= FORM ================= */
+.form-group{
+  margin-bottom:70px;
+}
+
+label{
+  display:block;
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:8px;
+  margin-left: 30px;
+}
+
+.input-box{
+  background:white;
+  border-radius:8px;
+  padding:14px 16px;
+  font-size:20px;
+  font-weight:600;
+  color:#a1a1a1;
+  opacity:0.80;
+  margin-left: 30px;
+}
+
+.input-box.wrap{
+  line-height:1.4;
+}
+
+/* ================= BUTTON ================= */
+.button-row{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:40px;
+}
+
+.submit-btn{
+  background:#373C7D;
+  color:#F7FAFC;
+  border:none;
+  border-radius:8px;
+  padding:10px 24px;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#373C7D;
+  color:white;
+  padding:40px 0;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+  text-align:center;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:120px;
+  margin-bottom:20px;
+  font-size:12px;
+}
+
+footer p{
+  font-size:12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  nav{
+    gap:16px;
+  }
+
+  .page-title{
+    font-size:26px;
+    text-align:center;
+  }
+
+  label{
+    font-size:18px;
+  }
+
+  .input-box{
+    font-size:18px;
+  }
+
+  .button-row{
+    justify-content:center;
+  }
+
+  .footer-links{
+    gap:40px;
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <a href="1.home.html" class="logo">
+    <img src="logo.png" alt="Logo">
+  </a>
+  <nav>
+    <a href="1.home.html">Home</a>
+    <a href="1.about us.html">About</a>
+    <a href="1.contact.html">Contact</a>
+    <a href="1.login.html" class="login-btn">Login</a>
+  </nav>
+</header>
+
+<!-- ================= CONTENT ================= -->
+<div class="container">
+
+  <div class="page-title">Edit Application</div>
+
+  <div class="form-group">
+    <label>Application Number</label>
+    <div class="input-box">UCS200605789564</div>
+  </div>
+
+  <div class="form-group">
+    <label>Applicant Name</label>
+    <div class="input-box">Priya Sharma</div>
+  </div>
+
+  <div class="form-group">
+    <label>Date of Birth</label>
+    <div class="input-box">26-06-1997</div>
+  </div>
+
+  <div class="form-group">
+    <label>Gender</label>
+    <div class="input-box">Female</div>
+  </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <div class="input-box wrap">
+      1/205, Middle Street, Masarpatti, Masarpatti (PO), Ettayapuram (TK),
+      Thoothukudi (Dist), Pincode - 626202
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Aadhar Number</label>
+    <div class="input-box">6363 5686 9568</div>
+  </div>
+
+  <div class="form-group">
+    <label>Mobile Number</label>
+    <div class="input-box">3662598679</div>
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <div class="input-box">priyasharma123@gmail.com</div>
+  </div>
+
+  <div class="form-group">
+    <label>Family Members</label>
+    <div class="input-box">4</div>
+  </div>
+
+  <div class="form-group">
+    <label>Income</label>
+    <div class="input-box">170000</div>
+  </div>
+
+  <div class="form-group">
+    <label>Occupation</label>
+    <div class="input-box">Coolie</div>
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <div class="input-box">&nbsp;</div>
+  </div>
+
+  <div class="form-group">
+    <label>Documents</label>
+    <div class="input-box">&nbsp;</div>
+  </div>
+
+  <div class="button-row">
+    <button class="submit-btn">Resubmit Application</button>
+  </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <span>Terms of Service</span>
+      <span>Privacy Policy</span>
+      <span>Accessibility</span>
+    </div>
+    <p>© 2024 Ration Card Services. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

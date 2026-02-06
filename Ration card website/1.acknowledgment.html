@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acknowledgment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Public Sans', sans-serif;
+}
+body{
+  background:#E8EDF2;
+  color:#0D121C;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:65px;
+  background:#F7FAFC;
+  border-bottom:1px solid #E6E8EB;
+  box-shadow:0 4px 4px rgba(0,0,0,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  z-index:1000;
+}
+.logo img{width:150px;}
+nav{display:flex;gap:36px;align-items:center;}
+nav a{text-decoration:none;color:#0D141C;font-size:18px;font-weight:500;}
+.login-btn{
+  background:#373C7D;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:8px;
+  font-weight:700;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.container{
+  max-width:1300px;
+  margin:120px auto 80px;
+  padding:0 24px;
+}
+
+/* ===== TITLE ===== */
+.page-title{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:24px;
+}
+
+/* ===== SUCCESS BOX ===== */
+.success-box{
+  
+  
+
+  text-align:center;
+  padding:24px;
+  margin-bottom:12px;
+}
+.success-box h2{
+  font-size:28px;
+  font-weight:700;
+}
+.success-text{
+  text-align:center;
+  font-size:16px;
+  margin-bottom:40px;
+}
+
+/* ===== MAIN GRID ===== */
+.main-grid{
+  display:grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr;}
+}
+
+/* ===== DETAILS ===== */
+.section-title{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.details{
+  font-size:14px;
+  line-height:33px;
+  color:#4F6E96;
+}
+
+/* ===== ILLUSTRATION ===== */
+.illustration{
+    border-radius:6px;
+  padding:16px;
+  display:flex;
+  justify-content:center;
+}
+.illustration img{
+  max-width:100%;
+  height:auto;
+}
+
+/* ===== NEXT STEPS ===== */
+.steps{
+  margin-top:48px;
+}
+.step{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:14px;
+}
+.checkbox{
+  width:20px;
+  height:20px;
+  border:2px solid #D1D9E8;
+  border-radius:4px;
+  flex-shrink:0;
+}
+.reference-note{
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-left: 4px;
+
+  font-family: 'Public Sans', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+
+  color: #4F6E96;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions{
+  display:flex;
+  gap:16px;
+  margin-top:32px;
+  flex-wrap:wrap;
+}
+.btn{
+  height:40px;
+  padding:0 20px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:14px;
+  border:none;
+  cursor:pointer;
+}
+.btn-primary{
+  background:#373C7D;
+  color:#fff;
+  margin-right: 300px;
+}
+.btn-download{
+  background:#4D7399;
+  color:#fff;
+  box-shadow:0 4px 4px rgba(0,0,0,0.25);
+  margin-right: 300px;
+}
+.btn-light{
+  background:#E8EDF2;
+  color:#0D121C;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#373C7D;
+  color:white;
+  padding:40px 0;
+  margin-top:80px;
+}
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:120px;
+  margin-bottom:20px;
+  font-size:12px;
+}
+footer p{font-size:12px;}
+
+@media(max-width:600px){
+  nav{display:none;}
+  .footer-links{gap:40px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="1.home.html" class="logo"><img src="logo.png"></a>
+  <nav>
+    <a href="1.home.html">Home</a>
+    <a href="1.about us.html">About</a>
+    <a href="1.contact.html">Contact</a>
+    <a href="1.login.html" class="login-btn">Login</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="page-title">Acknowledgment</div>
+
+  <div class="success-box">
+    <h2>Application Submitted Successfully</h2>
+  </div>
+  <div class="success-text">
+    Your ration card application has been received successfully.
+  </div>
+
+  <div class="main-grid">
+    <div>
+      <div class="section-title">Application Details</div>
+      <div class="details">
+        Application Number: RC2025XXXX<br>
+        Applicant Name: Sarah Johnson<br>
+        Application Type: New Ration Card<br>
+        Submission Date: 15/07/2024<br>
+        Current Status: Under Verification
+      </div>
+    </div>
+
+    <div class="illustration">
+      <img src="acknowledgment.png" alt="Acknowledgment Illustration">
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="section-title">Next Steps</div>
+
+    <div class="step">
+      <div class="checkbox"></div>
+      <div>Your application will be verified by the concerned authority.</div>
+    </div>
+
+    <div class="step">
+      <div class="checkbox"></div>
+      <div>Field verification may be conducted if required.</div>
+    </div>
+
+    <div class="step">
+      <div class="checkbox"></div>
+      <div>You will be notified once the status is updated.</div>
+    </div>
+  </div>
+<div class="reference-note">
+  Please keep your Application Number for future reference.
+</div>
+
+  <div class="actions">
+    <button class="btn btn-primary">View Application Status</button>
+    <button class="btn btn-download" onclick="location.href='1.tracking.html'">
+      Download Acknowledgment (PDF)
+    </button>
+    <button class="btn btn-light" onclick="location.href='1.home.html'">
+      Go to Home
+    </button>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <span>Terms of Service</span>
+      <span>Privacy Policy</span>
+      <span>Accessibility</span>
+    </div>
+    <p>© 2024 Ration Card Services. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
